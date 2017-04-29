@@ -9,7 +9,7 @@ var bio = {
         "location": "Reno, NV"
     },
     "biopic": "images/fry.jpg",
-    "WelcomeMessage": "Welcome to my resume",
+    "welcomeMessage": "Welcome to my resume",
     "skills": ["SQL", "VBA", "Excel", "Access", "SQL Server"]
 };
 
@@ -22,15 +22,11 @@ bio.display = function() {
     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.WelcomeMessage);
+    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 
-
-
-    $("#topContacts").append(formattedMobile, formattedEmail, formattedGitHub, formattedTwitter, formattedLocation);
-    $("#footerContacts").append(formattedMobile, formattedEmail, formattedGitHub, formattedTwitter, formattedLocation);
-    /* the below line didn't work - I tried to follow the suggestion to append to more than one selector at a time - but it wouldn't work
-        $("topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGitHub, formattedTwitter, formattedLocation);*/
+/*works now!!!!  Thanks!!!*/
+    $("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGitHub, formattedTwitter, formattedLocation);
 
 
 
